@@ -32,12 +32,16 @@ namespace GamePlay.Controller.Runtime
         {
             if(!_gameEngine.IsSimulating)
                 return;
+            
+            _gameEngine.GetTargetEntity().MyWeapon.FireKeyDown();
         }
 
         public void FireKeyUp()
         {
             if(!_gameEngine.IsSimulating)
                 return;
+            
+            _gameEngine.GetTargetEntity().MyWeapon.FireKeyUp();
         }
     }
 }

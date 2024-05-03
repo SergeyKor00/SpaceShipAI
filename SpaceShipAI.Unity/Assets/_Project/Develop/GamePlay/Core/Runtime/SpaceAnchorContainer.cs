@@ -1,18 +1,13 @@
 ﻿using GamePlay.Core.Interfaces;
 using GamePlay.Movement.Interfaces;
+using GamePlay.Weapon.Interfaces;
 
 namespace GamePlay.Core.Runtime
 {
     public class SpaceAnchorContainer : ISpaceAnchor
     {
-        private IMovingComponent _movingComponent;
-
-        public SpaceAnchorContainer(IMovingComponent movingComponent)
-        {
-            _movingComponent = movingComponent;
-        }
-
-
-        public IMovingComponent MovingComponent => _movingComponent;
+        public IMovingComponent MovingComponent { get; set; }
+        
+        public IWeapon MyWeapon { get; set; }
     }
 }

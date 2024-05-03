@@ -8,5 +8,7 @@ namespace GamePlay.Core.Interfaces
         void AddSingleEvent(Action call, float waitingTime);
 
         void AddTickableEvent(TickableEventDelegate call);
+
+        void RemoveTickableEvent(TickableEventDelegate call);
     }
 }

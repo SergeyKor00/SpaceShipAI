@@ -3,6 +3,7 @@ using GamePlay.Controller.Runtime;
 using GamePlay.Core.Interfaces;
 using GamePlay.Core.Runtime;
 using GamePlay.Movement.Interfaces;
+using GamePlay.Weapon.Interfaces;
 using UnityEngine;
 using Zenject;
 
@@ -13,7 +14,7 @@ namespace UnityDisplay.Runtime
         [SerializeField] private SpaceEntitiesDisplayer _spaceEntitiesDisplayer;
         [SerializeField] private MovingConfig _movingConfig;
         [SerializeField] private UnityTimer _unityTimer;
-        
+        [SerializeField] private WeaponConfig _weaponConfig;
         
         public override void InstallBindings()
         {
@@ -24,6 +25,8 @@ namespace UnityDisplay.Runtime
             Container.Bind<GameEngine>().FromNew().AsSingle();
             Container.Bind<ISpaceAnchorsStorage>().To<SpaceAnchorsStorage>().FromNew().AsSingle();
             Container.Bind<IUserInputReceiver>().To<SpaceShipInputReceiver>().FromNew().AsSingle();
+            Container.Bind<IWeaponConfig>().To<WeaponConfig>().FromInstance(_weaponConfig);
+            Container.Bind<IShellsFactory>().To<PlayModeShellsFactory>().FromNew().AsSingle();
         }
     }
 }

@@ -23,6 +23,8 @@ namespace GamePlay.Core.Runtime
             var spaceStation = _spaceAnchorsFactory.CreatePlatform();
             _spaceAnchorsStorage.AddEntity(spaceShip);
             _isSimulating = true;
+            
+            _shipAnchor.MyWeapon.SetEnemy(spaceStation);
         }
 
         

@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spaceShipPrefab: {fileID: 3559172983542713705, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
   _spaceStationPrefab: {fileID: 2213256354241317288, guid: e1cb15644bf35634e9841f06287aa812, type: 3}
+  _shellPrefab: {fileID: 8433912879792694706, guid: 16c9023785c8a824b9462b5766decb7c, type: 3}
 --- !u!114 &210050213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +242,7 @@ MonoBehaviour:
   _spaceEntitiesDisplayer: {fileID: 210050212}
   _movingConfig: {fileID: 11400000, guid: 177f5eade0f424d468dd2ce61bcf09c4, type: 2}
   _unityTimer: {fileID: 210050213}
+  _weaponConfig: {fileID: 11400000, guid: 0d0df1a8a1cbecf4ca1a3ed618c87c6d, type: 2}
 --- !u!4 &1174806920
 Transform:
   m_ObjectHideFlags: 0
@@ -288,67 +290,6 @@ MonoBehaviour:
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
   _parentContractNames: []
---- !u!1001 &1203014661
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125151897432554924, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3559172983542713705, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_Name
-      value: SpaceShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 3559172983542713705, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8048774267ac1414e936fb1b5bfbbc26, type: 3}
 --- !u!1 &1598887474
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79ff737fec2e46b2a8d695b7c652b133, type: 3}
-  m_Name: MovingConfig
+  m_Script: {fileID: 11500000, guid: ea961ddea2be4375b48464473d0f0549, type: 3}
+  m_Name: WeaponConfig
   m_EditorClassIdentifier: 
-  _movingSpeed: 5
-  _rotationSpeed: 5
-  _accelerationCoeff: 5
-  _shipPosition: {x: 0, y: -4}
-  _stationPosition: {x: 0, y: 0}
+  _startRange: 30
+  _startPower: 1
+  _weaponType: 0
