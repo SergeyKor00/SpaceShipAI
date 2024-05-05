@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07d1d9dff5d4293ae6cdfa3ae996f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _useAiToPlay: 1
 --- !u!114 &210050216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +244,7 @@ MonoBehaviour:
   _movingConfig: {fileID: 11400000, guid: 177f5eade0f424d468dd2ce61bcf09c4, type: 2}
   _unityTimer: {fileID: 210050213}
   _weaponConfig: {fileID: 11400000, guid: 0d0df1a8a1cbecf4ca1a3ed618c87c6d, type: 2}
+  _hullConfig: {fileID: 11400000, guid: 1283437c342f3ab47b95ba103c4897de, type: 2}
 --- !u!4 &1174806920
 Transform:
   m_ObjectHideFlags: 0

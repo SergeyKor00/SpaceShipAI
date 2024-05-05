@@ -1,4 +1,6 @@
 ﻿using GamePlay.Core.Interfaces;
+using GamePlay.Durability;
+using GamePlay.Durability.interfaces;
 using GamePlay.Movement.Runtime;
 using GamePlay.Weapon;
 using GamePlay.Weapon.Interfaces;
@@ -12,7 +14,9 @@ namespace GamePlay.Core.Runtime
     {
         [Inject] protected DiContainer _diContainer;
         [Inject] protected IWeaponConfig _weaponConfig;
-
+        [Inject] private IHullConfig _hullConfig;
+        
+        
         public ISpaceAnchor CreateSpaceShip()
         {
             var movement = new SpaceShip();
@@ -26,6 +30,10 @@ namespace GamePlay.Core.Runtime
             var weapon = CreateWeapon(_weaponConfig.WeaponType, spaceShipContainer);
             _diContainer.Inject(weapon);
             spaceShipContainer.MyWeapon = weapon;
+
+            var hull = new SimpleAnchorHull(_hullConfig, spaceShipContainer);
+            _diContainer.Inject(hull);
+            spaceShipContainer.MyHull = hull;
             
             return spaceShipContainer;
         }
@@ -54,6 +62,9 @@ namespace GamePlay.Core.Runtime
             
             _diContainer.Inject(spaceShipContainer);
             
+            var hull = new SimpleAnchorHull(_hullConfig, spaceShipContainer);
+            _diContainer.Inject(hull);
+            spaceShipContainer.MyHull = hull;
             
             return spaceShipContainer;
         }

@@ -1,7 +1,9 @@
-﻿using GamePlay.Controller.Interfases;
+﻿using AI.ShipAITactics;
+using GamePlay.Controller.Interfases;
 using GamePlay.Controller.Runtime;
 using GamePlay.Core.Interfaces;
 using GamePlay.Core.Runtime;
+using GamePlay.Durability.interfaces;
 using GamePlay.Movement.Interfaces;
 using GamePlay.Weapon.Interfaces;
 using UnityEngine;
@@ -15,6 +17,7 @@ namespace UnityDisplay.Runtime
         [SerializeField] private MovingConfig _movingConfig;
         [SerializeField] private UnityTimer _unityTimer;
         [SerializeField] private WeaponConfig _weaponConfig;
+        [SerializeField] private HullConfig _hullConfig;
         
         public override void InstallBindings()
         {
@@ -27,6 +30,8 @@ namespace UnityDisplay.Runtime
             Container.Bind<IUserInputReceiver>().To<SpaceShipInputReceiver>().FromNew().AsSingle();
             Container.Bind<IWeaponConfig>().To<WeaponConfig>().FromInstance(_weaponConfig);
             Container.Bind<IShellsFactory>().To<PlayModeShellsFactory>().FromNew().AsSingle();
+            Container.Bind<IHullConfig>().To<HullConfig>().FromInstance(_hullConfig);
+            Container.Bind<ITacticFactory>().To<ShipAiFactory>().FromNew().AsSingle();
         }
     }
 }

@@ -15,14 +15,15 @@ namespace GamePlay.Weapon.Runtime
         private ISpaceAnchor _targetEnemy;
         private  Vector2 _position;
         private float _speed;
-        
+        private int _power;
 
-        public SimpleShell(int id,Vector2 position, float lifeTime, float speed)
+        public SimpleShell(int id, ShellCreatingData creatingData)
         {
             Id = id;
-            _position = position;
-            _lifeTime = lifeTime;
-            _speed = speed;
+            _position = creatingData.Position;
+            _lifeTime = creatingData.LifeTime;
+            _speed = creatingData.Speed;
+            _power = (int)creatingData.Power;
         }
 
         public int Id { get; }
@@ -41,9 +42,9 @@ namespace GamePlay.Weapon.Runtime
         private void Tick(float deltatime)
         {
             _position += _direction * deltatime * _speed;
-            if (Vector2.SqrMagnitude(_position - _targetEnemy.MovingComponent.Position) < 0.01f)
+            if (Vector2.SqrMagnitude(_position - _targetEnemy.MovingComponent.Position) < Mathf.Pow(_targetEnemy.MyHull.ContactRadius, 2))
             {
-                Debug.Log("Hit enemy");
+                _targetEnemy.MyHull.Damage(_power);
                 DestoryShell();
                 return;
             }

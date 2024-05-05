@@ -33,10 +33,10 @@ namespace UnityDisplay.Runtime
         private void Update()
         {
             _spaceShipTransform.position = _spaceShipAnchor.MovingComponent.Position;
-            _spaceShipTransform.rotation = _spaceShipAnchor.MovingComponent.Rotation;
+            _spaceShipTransform.rotation = Quaternion.LookRotation(_spaceShipAnchor.MovingComponent.Direction, Vector3.forward);
 
             _spaceStationTransform.position = _stationAnchor.MovingComponent.Position;
-            _spaceStationTransform.rotation = _stationAnchor.MovingComponent.Rotation;
+            //_spaceStationTransform.rotation = _stationAnchor.MovingComponent.Direction;
 
             foreach (var shells in _shellsToDisplay.Values)
             {

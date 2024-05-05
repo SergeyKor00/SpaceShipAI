@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79ff737fec2e46b2a8d695b7c652b133, type: 3}
-  m_Name: MovingConfig
+  m_Script: {fileID: 11500000, guid: f49629b716e84ac4a833ee9b217d3a5b, type: 3}
+  m_Name: HullConfig
   m_EditorClassIdentifier: 
-  _movingSpeed: 5
-  _rotationSpeed: 2
-  _accelerationCoeff: 2
-  _shipPosition: {x: 8, y: 0}
-  _stationPosition: {x: 0, y: 0}
+  _startHealth: 50
+  _contactRadius: 0.1

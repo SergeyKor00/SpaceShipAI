@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea961ddea2be4375b48464473d0f0549, type: 3}
   m_Name: WeaponConfig
   m_EditorClassIdentifier: 
-  _startRange: 30
-  _startPower: 1
+  _startRange: 5
+  _startPower: 10
   _weaponType: 0
+  _missleLifeTime: 5
+  _missleSpeed: 5

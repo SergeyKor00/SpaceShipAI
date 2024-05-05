@@ -18,9 +18,8 @@ namespace GamePlay.Movement.Runtime
         private Vector2 _targetDirection;
         private float _lastFrameDeltaTime;
         public ref Vector2 Position => ref _myPosition;
-        public ref Quaternion Rotation => ref _myRotation;
-        
-        
+        public ref Vector2 Direction => ref _targetDirection;
+        public float Speed => _currSpeed;
 
 
         [Inject]
@@ -29,8 +28,7 @@ namespace GamePlay.Movement.Runtime
             _gameTimer.AddTickableEvent(UpdatePosition);
             _myPosition = _movementConfig.ShipStartPosition;
             _myRotation = Quaternion.LookRotation(Vector3.up, Vector3.forward);
-            _targetDirection = Vector2.up;
-            _currRotation = 90;
+            _targetDirection = Vector2.right;
         }
 
         

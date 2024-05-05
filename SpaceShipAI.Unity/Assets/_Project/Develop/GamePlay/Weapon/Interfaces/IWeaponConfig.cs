@@ -7,5 +7,8 @@
         public float StartPower { get; }
         
         public WeaponType WeaponType { get; }
+        float MissleLifeTime { get; }
+        
+        float MissleSpeed { get; }
     }
 }

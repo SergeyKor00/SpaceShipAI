@@ -6,13 +6,13 @@ namespace GamePlay.Movement.Runtime
     public class StaticPlatform : IMovingComponent
     {
         private Vector2 _myPosition;
-        private Quaternion _myRotation;
+        private Vector2 _myRotation;
         
         public ref Vector2 Position => ref _myPosition;
 
-        public ref Quaternion Rotation => ref _myRotation;
+        public ref Vector2 Direction => ref _myRotation;
 
-        public  float Acceleration =>  0.0f;
+        public  float Speed =>  0.0f;
 
 
         public StaticPlatform(Vector2 myPosition)

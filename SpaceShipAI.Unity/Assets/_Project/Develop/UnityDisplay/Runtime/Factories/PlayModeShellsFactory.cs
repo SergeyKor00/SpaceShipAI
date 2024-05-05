@@ -10,6 +10,7 @@ namespace UnityDisplay.Runtime
     {
         [Inject] private SpaceEntitiesDisplayer _entitiesDisplayer;
         [Inject] private DiContainer  _diContainer;
+        [Inject] private IWeaponConfig _weaponConfig;
         
         private int _lastShellId;
         public IShellAnchor CreateShell(WeaponType weaponType, ISpaceAnchor anchor)
@@ -18,7 +19,15 @@ namespace UnityDisplay.Runtime
             switch (weaponType)
             {
                 default:
-                    var shell = new SimpleShell(_lastShellId, anchor.MovingComponent.Position, 2.0f, 10.0f);
+                    var creatingData = new ShellCreatingData
+                    {
+                        LifeTime = _weaponConfig.MissleLifeTime,
+                        Position = anchor.MovingComponent.Position,
+                        Power = _weaponConfig.StartPower,
+                        Speed = _weaponConfig.MissleSpeed
+                    };
+                    
+                    var shell = new SimpleShell(_lastShellId, creatingData);
                     _diContainer.Inject(shell);
                     _entitiesDisplayer.AddShell(shell);
                     

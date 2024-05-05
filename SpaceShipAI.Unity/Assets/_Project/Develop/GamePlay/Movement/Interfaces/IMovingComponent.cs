@@ -6,8 +6,9 @@ namespace GamePlay.Movement.Interfaces
     {
         ref Vector2 Position { get; }
         
-        ref Quaternion Rotation { get; }
+        ref Vector2 Direction { get; }
         
+        float Speed { get; }
 
         void SetRotation(float value);
 

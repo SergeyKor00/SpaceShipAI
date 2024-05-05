@@ -1,4 +1,5 @@
-﻿using GamePlay.Movement.Interfaces;
+﻿using GamePlay.Durability.interfaces;
+using GamePlay.Movement.Interfaces;
 using GamePlay.Weapon.Interfaces;
 
 namespace GamePlay.Core.Interfaces
@@ -8,5 +9,6 @@ namespace GamePlay.Core.Interfaces
         IMovingComponent MovingComponent { get; }
         
         IWeapon MyWeapon { get; }
+        IAnchorHull MyHull { get;  }
     }
 }
