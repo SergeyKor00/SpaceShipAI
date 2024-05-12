@@ -33,7 +33,7 @@ namespace GamePlay.Core.Runtime
 
             if (useAiPlayer)
             {
-                var frontLineAI = _tacticFactory.CreateTactic();
+                var frontLineAI = _tacticFactory.CreateTactic(_shipAnchor);
                 frontLineAI.SetControllOnShip(_shipAnchor, spaceStation);
             }
         }

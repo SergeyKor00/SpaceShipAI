@@ -1,7 +1,9 @@
-﻿namespace AI.ShipAITactics
+﻿using GamePlay.Core.Interfaces;
+
+namespace AI.ShipAITactics
 {
     public interface ITacticFactory
     {
-        IShipAITactic CreateTactic();
+        IShipAITactic CreateTactic(ISpaceAnchor spaceAnchor);
     }
 }
